@@ -21,3 +21,13 @@ class WorkerManager:
 
     def random_pick(self):
         return random.choice(self.workers)
+
+
+class Application(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.worker_manager = WorkerManager()
+        self.create_widgets()
+
+    def create_widgets(self):
+        pass
