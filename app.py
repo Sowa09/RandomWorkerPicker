@@ -30,4 +30,17 @@ class Application(tk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
+        # Form
+
+        tk.Label(self, text="Imię").grid(row=0, column=0)
+        self.name_entry = tk.Entry(self)
+        self.name_entry.grid(row=0, column=1)
+
+        tk.Label(self, text="Nazwisko").grid(row=1, column=0)
+        self.surname_entry = tk.Entry(self)
+        self.surname_entry.grid(row=1, column=1)
+
+        self.add_button = tk.Button(self, text="Dodaj pracownika", command=self.add_worker)
+        self.add_button.grid(row=3, column=0, columnspan=2)
+
         pass
