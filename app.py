@@ -56,4 +56,11 @@ class Application(tk.Frame):
 
         self.pack()
 
+    def add_worker(self):
+        pass
+
+    def pick_worker(self):
+        pass
+
+    def delete_worker(self):
         pass
