@@ -43,4 +43,17 @@ class Application(tk.Frame):
         self.add_button = tk.Button(self, text="Dodaj pracownika", command=self.add_worker)
         self.add_button.grid(row=3, column=0, columnspan=2)
 
+        # List
+        tk.Label(self, text="Pracownicy").grid(row=4, column=0)
+        self.worker_listbox = tk.Listbox(self)
+        self.worker_listbox.grid(row=5, column=0, columnspan=2)
+
+        self.pick_button = tk.Button(self, text="Wylosuj pracownika", command=self.pick_worker)
+        self.pick_button.grid(row=6, column=0, columnspan=2)
+
+        self.delete_button = tk.Button(self, text="Usuń pracownika", command=self.delete_worker)
+        self.delete_button.grid(row=7, column=0, columnspan=2)
+
+        self.pack()
+
         pass
