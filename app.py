@@ -77,9 +77,12 @@ class Application(tk.Frame):
         else:
             tk.messagebox.showinfo("Brak pracowników", "Nie można wylosować")
 
-
     def delete_worker(self):
-        pass
+        delete_worker = self.worker_listbox.curselection()
+        if delete_worker:
+            worker = self.worker_manager.workers[delete_worker[0]]
+            self.worker_listbox.delete(delete_worker[0])
+            self.worker_manager.remove_worker(worker)
 
 
 if __name__ == '__main__':
