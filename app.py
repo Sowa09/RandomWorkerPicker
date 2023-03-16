@@ -57,10 +57,27 @@ class Application(tk.Frame):
         self.pack()
 
     def add_worker(self):
-        pass
+        name = self.name_entry.get()
+        surname = self.surname_entry.get()
+        listbox = self.worker_listbox.get(0, 'end')
+
+        for item in listbox:
+            if name in item and surname in item:
+                tk.messagebox.showinfo("Pracownik istnieje", f"Pracownik {name} {surname} istnieje")
+                break
+        else:
+            worker = Worker(name, surname)
+            self.worker_manager.add_worker(worker)
+            self.worker_listbox.insert(tk.END, f"{worker.name} {worker.surname}")
 
     def pick_worker(self):
         pass
 
     def delete_worker(self):
         pass
+
+
+if __name__ == '__main__':
+    root = tk.Tk()
+    app = Application(master=root)
+    app.mainloop()
