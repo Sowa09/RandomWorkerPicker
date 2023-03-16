@@ -71,7 +71,12 @@ class Application(tk.Frame):
             self.worker_listbox.insert(tk.END, f"{worker.name} {worker.surname}")
 
     def pick_worker(self):
-        pass
+        if self.worker_manager.workers:
+            random_worker = self.worker_manager.random_pick()
+            tk.messagebox.showinfo("Random worker", f"{random_worker.name} {random_worker.surname}")
+        else:
+            tk.messagebox.showinfo("Brak pracowników", "Nie można wylosować")
+
 
     def delete_worker(self):
         pass
